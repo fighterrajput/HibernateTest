@@ -1,0 +1,35 @@
+package com.rays.test;
+
+import java.util.Date;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.mysql.cj.xdevapi.SessionFactory;
+import com.rays.dto.UserDTO;
+
+public class TestUser {
+	
+	public static void main(String[] args) {
+		UserDTO dto = new UserDTO();
+		dto.setId(1);
+		dto.setFirstName("Ankit");
+		dto.setLastName("Rajput");
+		dto.setLoginId("ankitsinghdadara@gmail.com");
+		dto.setDob(new Date());
+		dto.setPassword("ankit@123");
+		dto.setAddress("Indore");
+		
+		org.hibernate.SessionFactory sessionfactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionfactory.openSession();
+		Transaction tx = session.beginTransaction();
+		
+		session.save(dto);
+		tx.commit();
+		session.close();
+		
+		
+	}
+
+}

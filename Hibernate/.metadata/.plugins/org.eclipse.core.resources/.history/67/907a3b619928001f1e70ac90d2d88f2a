@@ -1,0 +1,58 @@
+package com.rays.test;
+
+import java.util.Date;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.mysql.cj.xdevapi.SessionFactory;
+import com.rays.dto.UserDTO;
+import com.rays.dto.UserModel;
+
+public class TestUser {
+	
+	public static void main(String[] args) {
+		
+		/*
+		 * UserDTO dto = new UserDTO(); dto.setId(1); dto.setFirstName("Ankit");
+		 * dto.setLastName("Rajput"); dto.setLoginId("ankitsinghdadara@gmail.com");
+		 * dto.setDob(new Date()); dto.setPassword("ankit@123");
+		 * dto.setAddress("Indore");
+		 * 
+		 * org.hibernate.SessionFactory sessionfactory = new
+		 * Configuration().configure().buildSessionFactory(); Session session =
+		 * sessionfactory.openSession(); Transaction tx = session.beginTransaction();
+		 * 
+		 * session.save(dto); tx.commit(); session.close();
+		 * 
+		 */
+		
+		//testAdd();
+		testUpdate();
+	}
+
+	private static void testUpdate() {
+		
+		UserModel model = new UserModel();
+		UserDTO dto = model.findByPk(1);
+		dto.setFirstName("ANKITTTTTTT");
+	model.update(dto);
+	}
+
+	private static void testAdd() {
+		
+		UserDTO dto = new UserDTO();
+		dto.setFirstName("riya");
+		dto.setLastName("rana");
+		dto.setLoginId("riya@gmil.com");
+		dto.setPassword("123");
+		dto.setDob(new Date());
+		dto.setAddress("indore");
+		
+		UserModel model = new UserModel();
+		model.add(dto);
+		
+	}
+
+}
