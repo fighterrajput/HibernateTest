@@ -20,7 +20,7 @@ public class TestUser {
 	private static void testAdd() {
 
 		UserDTO dto = new UserDTO();
-		dto.setId(4);
+		dto.setId(1);
 		dto.setFirstName("hritika");
 		dto.setLastName("sahu");
 		dto.setLoginId("hritika@gmail.com");

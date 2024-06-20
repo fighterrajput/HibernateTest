@@ -1,0 +1,9 @@
+package com.rays.subclass;
+
+public class Cheque extends Payment {
+	
+	private String chqNumber;
+
+	private String bankName;
+
+}

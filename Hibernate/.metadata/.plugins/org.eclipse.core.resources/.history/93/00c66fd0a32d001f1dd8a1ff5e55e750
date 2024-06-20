@@ -1,0 +1,23 @@
+package com.rays.inheritance;
+
+public class TestTablePerClass {
+	public static void main(String[] args) {
+		CreditCardPayment ccp = new CreditCardPayment();
+		
+		ccp.setAmount(1000);
+		ccp.setCcType("visa");
+		ccp.setPaymentType("imps");
+		
+		Cheque ch = new Cheque();
+		ch.setAmount(5000);
+		ch.setPaymentType("deposite");
+		ch.setBankName("BOI");
+		ch.setChqNumber("BOI100");
+
+		Cash c = new Cash();
+		
+		c.setAmount(2000);
+		c.setPaymentType("cash");
+	}
+
+}

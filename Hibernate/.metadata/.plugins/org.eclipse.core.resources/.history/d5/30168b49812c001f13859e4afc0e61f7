@@ -1,0 +1,9 @@
+package com.rays.hql;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class TestHQLCount {
+       SessionFactory sf = new Configuration().configure().buildSessionFactory();
+       sf.op
+}
